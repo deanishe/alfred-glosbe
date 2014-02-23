@@ -68,11 +68,20 @@ def search_api(wf, source, dest, query):
         translation = result.get('phrase', {}).get('text', '')
         if not translation:
             continue
+        log.debug('translation : %r', translation)
+        meanings = []
         for meaning in result.get('meanings', []):
             text = meaning.get('text', '')
-            if not text:
+            language = meaning.get('language', '')
+            if not text or language != dest:
                 continue
-            translations.append((unescape(translation), unescape(text)))
+            log.debug('  → meaning : %s', text)
+            meanings.append(text)
+        if not len(meanings):
+            translations.append((unescape(translation), ''))
+        else:
+            for meaning in meanings:
+                translations.append((unescape(translation), unescape(meaning)))
     return translations
 
 
