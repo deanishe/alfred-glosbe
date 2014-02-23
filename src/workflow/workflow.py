@@ -455,11 +455,13 @@ class Workflow(object):
             age = time.time() - os.stat(cache_path).st_mtime
             if age < max_age:
                 with open(cache_path, 'rb') as file:
+                    self.logger.debug('Loading cached data from : %s',
+                                      cache_path)
                     return pickle.load(file)
         data = data_func()
         with open(cache_path, 'wb') as file:
             pickle.dump(data, file)
-        self.logger.debug('Cached data at : %s', cache_path)
+        self.logger.debug('Cached data saved at : %s', cache_path)
         return data
 
     def run(self, func):
