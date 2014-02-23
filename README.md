@@ -4,6 +4,8 @@ Translate text using the [glosbe.com](http://glosbe.com/) [API](http://glosbe.co
 
 ![](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot2.png "")
 
+Download [here](https://github.com/deanishe/alfred-glosbe/raw/master/Glosbe%20Translation.alfredworkflow).
+
 ## TL;DR ##
 
 - `.ende query` Search for German translations of the English word `query`
