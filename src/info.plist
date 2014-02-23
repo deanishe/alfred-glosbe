@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.deanishe.alfred-glosbe</string>
+	<key>connections</key>
+	<dict>
+		<key>25810F68-1240-4696-B72A-D9A7F87AC1B1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC16122B-DB40-4987-B820-0461420FEE02</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>96C864C1-5607-4419-9191-684C64556611</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>476A8C56-714B-46C0-8870-8B3F49A06BE4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C9BFD3DD-6D02-433F-A772-C40B88CA951E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>97AC126B-CD90-4181-AD94-3A08F3B6F13E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC16122B-DB40-4987-B820-0461420FEE02</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>96C864C1-5607-4419-9191-684C64556611</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B21BFBDA-11AE-431F-A2C1-FEFB3000616A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC16122B-DB40-4987-B820-0461420FEE02</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>96C864C1-5607-4419-9191-684C64556611</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dean Jackson</string>
+	<key>description</key>
+	<string>Translate text using Glosbe.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Glosbe Translation</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.ende</string>
+				<key>runningsubtext</key>
+				<string>Fetching translations…</string>
+				<key>script</key>
+				<string>python translate.py eng deu "{query}"</string>
+				<key>subtext</key>
+				<string>Translate English to German using Glosbe.com</string>
+				<key>title</key>
+				<string>English &gt; German Translation</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>97AC126B-CD90-4181-AD94-3A08F3B6F13E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>FC16122B-DB40-4987-B820-0461420FEE02</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.deen</string>
+				<key>runningsubtext</key>
+				<string>Fetching translations…</string>
+				<key>script</key>
+				<string>python translate.py deu eng "{query}"</string>
+				<key>subtext</key>
+				<string>Translate German to English using Glosbe.com</string>
+				<key>title</key>
+				<string>German &gt; English Translation</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>25810F68-1240-4696-B72A-D9A7F87AC1B1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Copied to Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>96C864C1-5607-4419-9191-684C64556611</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>glosbelang</string>
+				<key>runningsubtext</key>
+				<string>Loading language list…</string>
+				<key>script</key>
+				<string>python translate.py --langs "{query}"</string>
+				<key>subtext</key>
+				<string>List/search for language codes</string>
+				<key>title</key>
+				<string>Glosbe Supported Languages</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B21BFBDA-11AE-431F-A2C1-FEFB3000616A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>glosbehelp</string>
+				<key>subtext</key>
+				<string>Open the Glosbe Translation help file in your browser</string>
+				<key>text</key>
+				<string>Glosbe Translation Help</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>476A8C56-714B-46C0-8870-8B3F49A06BE4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python translate.py --openhelp</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>C9BFD3DD-6D02-433F-A772-C40B88CA951E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Translate between a multitude of languages with the Glosbe.com API.
+
+NOTE: You must set up your own keywords and translation pairs. By default, only English &gt; German and German &gt; English are defined.
+
+See the included Script Filter for the necessary settings.</string>
+	<key>uidata</key>
+	<dict>
+		<key>25810F68-1240-4696-B72A-D9A7F87AC1B1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>476A8C56-714B-46C0-8870-8B3F49A06BE4</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>96C864C1-5607-4419-9191-684C64556611</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>97AC126B-CD90-4181-AD94-3A08F3B6F13E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B21BFBDA-11AE-431F-A2C1-FEFB3000616A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>C9BFD3DD-6D02-433F-A772-C40B88CA951E</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>FC16122B-DB40-4987-B820-0461420FEE02</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
