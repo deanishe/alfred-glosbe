@@ -2,7 +2,7 @@
 
 Translate text using the [glosbe.com](http://glosbe.com/) [API](http://glosbe.com/a-api).
 
-![](screenshot2.png "")
+![](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot2.png "")
 
 ## TL;DR ##
 
@@ -48,12 +48,12 @@ Glosbe.com supports hundreds of languages (though not all translation pairs are 
 
 ## Screenshots ##
 
-![English &gt; German search](screenshot1.png "English &gt; German search")
+![English &gt; German search](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot1.png "English &gt; German search")
 
-![German &gt; English search](screenshot2.png "German &gt; English search")
+![German &gt; English search](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot2.png "German &gt; English search")
 
-![No results](screenshot3.png "No results")
+![No results](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot3.png "No results")
 
-![Searching languages](screenshot4.png "Searching languages")
+![Searching languages](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot4.png "Searching languages")
 
-![Searching language codes](screenshot5.png "Searching language codes")
+![Searching language codes](https://github.com/deanishe/alfred-glosbe/raw/master/screenshot5.png "Searching language codes")
