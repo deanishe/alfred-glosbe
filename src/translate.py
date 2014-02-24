@@ -59,7 +59,7 @@ def search_api(wf, source, dest, query):
     r = web.get(API_URL, params=params)
     if r.error:
         wf.add_item('Error contacting Glosbe.com',
-                    r.reason, valid='no', icon=ICON_ERROR)
+                    r.reason, valid=False, icon=ICON_ERROR)
         wf.send_feedback()
         return 0
     results = r.json()
@@ -115,11 +115,11 @@ def output_langs(wf, langs, text_output=False):
             print(fmt.format(lang, code).encode('utf-8'))
     else:  # Alfred XML
         if not len(langs):
-            wf.add_item("No languages found", valid='no', icon=ICON_WARNING)
+            wf.add_item("No languages found", valid=False, icon=ICON_WARNING)
         else:
             for lang, code in langs:
                 wf.add_item(lang, code, uid=code, arg=code,
-                            valid='yes', icon='icon.png')
+                            valid=True, icon='icon.png')
         wf.send_feedback()
 
 
@@ -150,11 +150,11 @@ def main(wf):
     err = False
     if source not in codes:
         wf.add_item('Unknown source language : {0}'.format(source),
-                    '', valid='no', icon=ICON_ERROR)
+                    '', valid=False, icon=ICON_ERROR)
         err = True
     if dest not in codes:
         wf.add_item('Unknown destination language : {0}'.format(dest),
-                    '', valid='no', icon=ICON_ERROR)
+                    '', valid=False, icon=ICON_ERROR)
         err = True
     if err:
         wf.send_feedback()
@@ -168,12 +168,12 @@ def main(wf):
 
     if not len(results):
         wf.add_item("No translations for '{0}'".format(query),
-                    valid='no',
+                    valid=False,
                     icon=ICON_WARNING)
     else:
         for translation, definition in results:
             wf.add_item(translation, definition, arg=translation,
-                        valid='yes', icon='icon.png')
+                        valid=True, icon='icon.png')
     wf.send_feedback()
 
 
