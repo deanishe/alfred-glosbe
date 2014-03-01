@@ -163,7 +163,8 @@ def main(wf):
     def wrapper():
         return search_api(wf, source, dest, query)
 
-    key = hashlib.md5('{}-{}-{}'.format(source, dest, query)).hexdigest()
+    key = '{}-{}-{}'.format(source, dest, query).encode('utf-8')
+    key = hashlib.md5(key).hexdigest()
     results = wf.cached_data(key, wrapper, max_age=600)
 
     if not len(results):
