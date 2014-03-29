@@ -10,6 +10,14 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>E07CD97E-B944-4FC8-941D-B425D4A16BF0</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Translations in Browser</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>FC16122B-DB40-4987-B820-0461420FEE02</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -38,6 +46,14 @@
 		</array>
 		<key>97AC126B-CD90-4181-AD94-3A08F3B6F13E</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E07CD97E-B944-4FC8-941D-B425D4A16BF0</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Translations in Browser</string>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>FC16122B-DB40-4987-B820-0461420FEE02</string>
@@ -88,6 +104,28 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>urlfile=~/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow\ Data/net.deanishe.alfred-glosbe/url
+
+if [ -f "$urlfile" ]; then
+	url=`cat "$urlfile"`
+	open "$url"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E07CD97E-B944-4FC8-941D-B425D4A16BF0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -97,7 +135,7 @@
 				<key>runningsubtext</key>
 				<string>Fetching translations…</string>
 				<key>script</key>
-				<string>python translate.py eng deu "{query}"</string>
+				<string>python translate.py en de "{query}"</string>
 				<key>subtext</key>
 				<string>Translate English to German using Glosbe.com</string>
 				<key>title</key>
@@ -132,35 +170,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>.deen</string>
-				<key>runningsubtext</key>
-				<string>Fetching translations…</string>
-				<key>script</key>
-				<string>python translate.py deu eng "{query}"</string>
-				<key>subtext</key>
-				<string>Translate German to English using Glosbe.com</string>
-				<key>title</key>
-				<string>German &gt; English Translation</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>25810F68-1240-4696-B72A-D9A7F87AC1B1</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -180,6 +189,35 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>96C864C1-5607-4419-9191-684C64556611</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.deen</string>
+				<key>runningsubtext</key>
+				<string>Fetching translations…</string>
+				<key>script</key>
+				<string>python translate.py de en "{query}"</string>
+				<key>subtext</key>
+				<string>Translate German to English using Glosbe.com</string>
+				<key>title</key>
+				<string>German &gt; English Translation</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>25810F68-1240-4696-B72A-D9A7F87AC1B1</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -215,6 +253,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python translate.py --openhelp</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>C9BFD3DD-6D02-433F-A772-C40B88CA951E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -233,23 +288,6 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python translate.py --openhelp</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>C9BFD3DD-6D02-433F-A772-C40B88CA951E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Translate between a multitude of languages with the Glosbe.com API.
@@ -262,37 +300,42 @@ See the included Script Filter for the necessary settings.</string>
 		<key>25810F68-1240-4696-B72A-D9A7F87AC1B1</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>220</real>
 		</dict>
 		<key>476A8C56-714B-46C0-8870-8B3F49A06BE4</key>
 		<dict>
 			<key>ypos</key>
-			<real>370</real>
+			<real>460</real>
 		</dict>
 		<key>96C864C1-5607-4419-9191-684C64556611</key>
 		<dict>
 			<key>ypos</key>
-			<real>200</real>
+			<real>220</real>
 		</dict>
 		<key>97AC126B-CD90-4181-AD94-3A08F3B6F13E</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>100</real>
 		</dict>
 		<key>B21BFBDA-11AE-431F-A2C1-FEFB3000616A</key>
 		<dict>
 			<key>ypos</key>
-			<real>250</real>
+			<real>340</real>
 		</dict>
 		<key>C9BFD3DD-6D02-433F-A772-C40B88CA951E</key>
 		<dict>
 			<key>ypos</key>
 			<real>370</real>
 		</dict>
+		<key>E07CD97E-B944-4FC8-941D-B425D4A16BF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
 		<key>FC16122B-DB40-4987-B820-0461420FEE02</key>
 		<dict>
 			<key>ypos</key>
-			<real>50</real>
+			<real>100</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

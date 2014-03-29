@@ -36,6 +36,7 @@ from __future__ import print_function, unicode_literals
 import os
 import sys
 import hashlib
+import urllib
 import subprocess
 from HTMLParser import HTMLParser
 from workflow import Workflow, web, ICON_ERROR, ICON_WARNING
@@ -165,7 +166,14 @@ def main(wf):
 
     key = '{}-{}-{}'.format(source, dest, query).encode('utf-8')
     key = hashlib.md5(key).hexdigest()
+    url = b'http://glosbe.com/{0}/{1}/{2}'.format(
+        source, dest,
+        urllib.quote(query.encode('utf-8')))
+
     results = wf.cached_data(key, wrapper, max_age=600)
+
+    with open(wf.cachefile('url'), 'wb') as file:
+        file.write(url)
 
     if not len(results):
         wf.add_item("No translations for '{0}'".format(query),
