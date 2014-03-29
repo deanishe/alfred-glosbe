@@ -1,4 +1,4 @@
-# Alfred Glosbe #
+# Alfred Glosbe Workflow #
 
 Translate text using the [glosbe.com](http://glosbe.com/) [API](http://glosbe.com/a-api).
 
@@ -9,11 +9,13 @@ Download [here](https://github.com/deanishe/alfred-glosbe/raw/master/Glosbe%20Tr
 ## TL;DR ##
 
 - `.ende query` Search for German translations of the English word `query`
-	- `ENTER` Copy selected translation to clipboard
+	- `↩` Copy selected translation to clipboard
+	- ` ⌘+↩` Open translation in browser
 - `.deen query` Search for English translations of the German word `query`
-	- `ENTER` Copy selected translation to clipboard
+	- `↩` Copy selected translation to clipboard
+	- ` ⌘+↩` Open translation in browser
 - `glosbelang [query]` Show/search list of supported languages (not all pairs are supported).
-	- `ENTER` Copy ISO-639-3 code of selected language to clipboard
+	- `↩` Copy ISO-639-3 code of selected language to clipboard
 - `glosbehelp` Open included help file in your browser
 
 Other translation pairs must be configured (see **Usage** section below).
