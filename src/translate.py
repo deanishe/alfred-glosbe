@@ -177,7 +177,8 @@ def main(wf):
 
     if not len(results):
         wf.add_item("No translations for '{0}'".format(query),
-                    valid=False,
+                    valid=True,
+                    arg='(no translation)',
                     icon=ICON_WARNING)
     else:
         for translation, definition in results:
