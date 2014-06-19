@@ -37,6 +37,7 @@ import os
 import sys
 import hashlib
 import urllib
+from collections import OrderedDict
 import subprocess
 from HTMLParser import HTMLParser
 from workflow import Workflow, web, ICON_ERROR, ICON_WARNING
@@ -64,7 +65,7 @@ def search_api(wf, source, dest, query):
         wf.send_feedback()
         return 0
     results = r.json()
-    translations = []
+    translations = OrderedDict()
     for result in results.get('tuc', []):
         translation = result.get('phrase', {}).get('text', '')
         if not translation:
@@ -73,17 +74,18 @@ def search_api(wf, source, dest, query):
         meanings = []
         for meaning in result.get('meanings', []):
             text = meaning.get('text', '')
-            language = meaning.get('language', '')
-            if not text or language != dest:
+            # language = meaning.get('language', '')
+            # if not text or language != dest:
+            if not text:
                 continue
             log.debug('  → meaning : %s', text)
             meanings.append(text)
         if not len(meanings):
-            translations.append((unescape(translation), ''))
+            translations[(unescape(translation), '')] = None
         else:
             for meaning in meanings:
-                translations.append((unescape(translation), unescape(meaning)))
-    return translations
+                translations[(unescape(translation), unescape(meaning))] = None
+    return translations.keys()
 
 
 def open_help_file():

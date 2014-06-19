@@ -135,7 +135,7 @@ fi</string>
 				<key>runningsubtext</key>
 				<string>Fetching translations…</string>
 				<key>script</key>
-				<string>python translate.py en de "{query}"</string>
+				<string>python translate.py eng deu "{query}"</string>
 				<key>subtext</key>
 				<string>Translate English to German using Glosbe.com</string>
 				<key>title</key>
@@ -204,7 +204,7 @@ fi</string>
 				<key>runningsubtext</key>
 				<string>Fetching translations…</string>
 				<key>script</key>
-				<string>python translate.py de en "{query}"</string>
+				<string>python translate.py deu eng "{query}"</string>
 				<key>subtext</key>
 				<string>Translate German to English using Glosbe.com</string>
 				<key>title</key>
