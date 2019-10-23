@@ -1,3 +1,7 @@
+<p align="center">
+	<strong>This workflow is dead because the Glosbe API is dead</strong>	
+</p>
+
 # Alfred Glosbe Workflow #
 
 Translate text using the [glosbe.com](http://glosbe.com/) [API](http://glosbe.com/a-api).
